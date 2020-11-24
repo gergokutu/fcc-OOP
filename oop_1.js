@@ -92,3 +92,25 @@ console.log('bird2.numLegs:', bird2.numLegs);
   console.log('ownProps of bird1:', ownProps);
   console.log('prototypeProps of bird1:', prototypeProps);
 }
+
+// Understand the Constructor Property
+console.log('bird1.constructor >', bird1.constructor);
+
+function joinBirdFraternity(candidate) {
+  if (candidate.constructor === Bird) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
+
+console.log('Should be true >', joinBirdFraternity(bird1));
+console.log('With instanceof >', bird1 instanceof Bird);
+// Constructor can be overwritten
+// Better to use instanceof...
+bird1.constructor = 'Madar';
+console.log('Should be true >', joinBirdFraternity(bird1));
+console.log('With instanceof >', bird1 instanceof Bird);
+
+// Change the prototype to a new object
