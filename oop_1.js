@@ -36,3 +36,28 @@ function Dog2(name, color) {
 
 let terrier = new Dog2('Huba', 'black&brown');
 console.log('terrier:', terrier);
+
+// Verify an Object's Constructor with instanceof
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+// Only change code below this line
+let myHouse = new House(2);
+console.log('Should be true >', myHouse instanceof House);
+
+// Own props > hasOwnProperty()
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+
+for (let prop in canary) {
+  if (canary.hasOwnProperty(prop)) {
+    ownProps.push(prop);
+  };
+};
+console.log('Props of canary [ name, numLegs ] >', ownProps);
