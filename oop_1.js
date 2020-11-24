@@ -65,7 +65,7 @@ console.log('Props of canary [ name, numLegs ] >', ownProps);
 // Use Prototype Properties to Reduce Duplicate Code
 function Bird(name) {
   this.name = name;
-}
+};
 
 Bird.prototype.numLegs = 2;
 
@@ -75,3 +75,20 @@ console.log('bird1:', bird1);
 console.log('bird2:', bird2);
 console.log('bird1.numLegs:', bird1.numLegs);
 console.log('bird2.numLegs:', bird2.numLegs);
+
+// List all properties
+{
+  const ownProps = [];
+  const prototypeProps = [];
+
+  for (let prop in bird1) {
+    if (bird1.hasOwnProperty(prop)) {
+      ownProps.push(prop);
+    } else {
+      prototypeProps.push(prop);
+    };
+  };
+
+  console.log('ownProps of bird1:', ownProps);
+  console.log('prototypeProps of bird1:', prototypeProps);
+}
