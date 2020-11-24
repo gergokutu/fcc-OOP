@@ -13,3 +13,11 @@ console.log('Say name >', dog.sayName());
 console.log('Say name >', dog['sayLegs']());
 console.log('Normal this:', dog.normalThis());
 console.log('Arrow this:', dog.arrowThis());
+
+// Define a constructor function
+// Not working with arrow function > because of this!!!
+function Dog() {
+  this.name = 'Kutyus',
+    this.color = 'brown',
+    this.numLegs = 4
+};
