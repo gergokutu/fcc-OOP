@@ -61,3 +61,17 @@ for (let prop in canary) {
   };
 };
 console.log('Props of canary [ name, numLegs ] >', ownProps);
+
+// Use Prototype Properties to Reduce Duplicate Code
+function Bird(name) {
+  this.name = name;
+}
+
+Bird.prototype.numLegs = 2;
+
+let bird1 = new Bird("Rigo");
+let bird2 = new Bird("Strucc");
+console.log('bird1:', bird1);
+console.log('bird2:', bird2);
+console.log('bird1.numLegs:', bird1.numLegs);
+console.log('bird2.numLegs:', bird2.numLegs);
