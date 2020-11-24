@@ -16,8 +16,23 @@ console.log('Arrow this:', dog.arrowThis());
 
 // Define a constructor function
 // Not working with arrow function > because of this!!!
+// Start it with capital letter
 function Dog() {
   this.name = 'Kutyus',
     this.color = 'brown',
     this.numLegs = 4
 };
+
+let kutyus = new Dog();
+console.log('kutyus:', kutyus);
+
+// More flexible constructors
+// They can accept parameters
+function Dog2(name, color) {
+  this.name = name,
+    this.color = color,
+    this.numLegs = 4
+};
+
+let terrier = new Dog2('Huba', 'black&brown');
+console.log('terrier:', terrier);
