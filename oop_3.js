@@ -35,3 +35,9 @@ function Bird() {
 
 let strucc = new Bird();
 console.log(strucc.getWeight());
+
+// Immediately Invoked Function Expression (IIFE)
+// Runs itself
+(function () {
+  console.log("A cozy nest is ready");
+})();
