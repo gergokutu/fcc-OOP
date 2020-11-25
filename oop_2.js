@@ -33,7 +33,43 @@ console.log('Prototype props of terrier:', prototypeProps);
 terrier.describe();
 
 // Prototype chain
-// Object is a supertype for all objects in JavaScript.
+// Object is a supertype (parent) for all objects in JavaScript.
 console.log('True >', Object.prototype.isPrototypeOf(Dog.prototype));
 
+// Use Inheritance So You Don't Repeat Yourself
+function Cat(name) {
+  this.name = name;
+};
 
+Cat.prototype = {
+  constructor: Cat,
+  // eat: function () {
+  //   console.log("nom nom nom");
+  // }
+};
+
+function Bear(name) {
+  this.name = name;
+};
+
+Bear.prototype = {
+  constructor: Bear
+  // eat: function () {
+  //   console.log("nom nom nom");
+  // }
+};
+
+function Animal() { };
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  }
+};
+
+// Not the best for inheritance
+// let grizzly = new Animal();
+// Instead >
+let grizzly = Object.create(Animal.prototype);
+let wildCat = Object.create(Animal.prototype);
