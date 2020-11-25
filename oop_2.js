@@ -95,3 +95,7 @@ Bear.prototype.sound = function () { console.log('Wraaarr!'); };
 Cat.prototype.sound = function () { console.log('Meow!'); };
 grizzly.sound();
 wildCat.sound();
+
+// Override Inherited Methods > same as adding new
+Cat.prototype.eat = function () { console.log('lefety lefety'); };
+wildCat.eat();
