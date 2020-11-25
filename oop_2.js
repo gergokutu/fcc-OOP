@@ -4,6 +4,10 @@ function Dog(name) {
 };
 
 Dog.prototype = {
+  // Manually changing the prototype to a new object
+  // Erases the constructor property from the prototype
+  // Do not forget to define the constructor property!!!
+  constructor: Dog,
   numLegs: 2,
   eat: function () {
     console.log('nom nom');
@@ -12,3 +16,5 @@ Dog.prototype = {
     console.log(`My name is ${this.name}.`)
   }
 };
+
+
