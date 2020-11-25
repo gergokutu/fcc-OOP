@@ -41,3 +41,49 @@ console.log(strucc.getWeight());
 (function () {
   console.log("A cozy nest is ready");
 })();
+
+// Use an IIFE to Create a Module
+// Why IIFE better than a simple funModuleObject??
+// security reason > cannot reach wrapped items globally..
+// Powerful with closure
+let funModule = (function () {
+  return {
+    isCuteMixin: function (obj) {
+      obj.isCute = function () {
+        return true;
+      };
+    },
+    singMixin: function (obj) {
+      obj.sing = function () {
+        console.log("Singing to an awesome tune");
+      }
+    }
+  };
+})();
+
+// Other syntax
+// Why IIFE is better?
+// The following does the same...
+// let funModule = {
+//   isCuteMixin: function (obj) {
+//     obj.isCute = function () {
+//       return true;
+//     };
+//   },
+//   singMixin: function (obj) {
+//     obj.sing = function () {
+//       console.log("Singing to an awesome tune");
+//     }
+//   }
+// };
+
+funModule.singMixin(strucc);
+strucc.sing();
+
+// funModule.singMixin = function (obj) {
+//   obj.sing = function () {
+//     console.log("changed");
+//   }
+// }
+// funModule.singMixin(strucc);
+// strucc.sing();
