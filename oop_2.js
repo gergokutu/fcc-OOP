@@ -79,8 +79,8 @@ Animal.prototype = {
 Cat.prototype = Object.create(Animal.prototype);
 Bear.prototype = Object.create(Animal.prototype);
 
-let grizzly = new Bear('Sushi');
-let wildCat = new Bear('Maci Laci');
+let grizzly = new Bear('Maci Laci');
+let wildCat = new Cat('Sushi');
 
 grizzly.eat();
 console.log('Bear constructor inherited from Animal >', grizzly.constructor);
@@ -89,3 +89,9 @@ console.log('Bear constructor inherited from Animal >', grizzly.constructor);
 Cat.prototype.constructor = Cat;
 Bear.prototype.constructor = Bear;
 console.log('Bear constructor after setting back >', grizzly.constructor);
+
+// Add Methods After Inheritance
+Bear.prototype.sound = function () { console.log('Wraaarr!'); };
+Cat.prototype.sound = function () { console.log('Meow!'); };
+grizzly.sound();
+wildCat.sound();
