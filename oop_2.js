@@ -17,4 +17,19 @@ Dog.prototype = {
   }
 };
 
+// An object inherits its prototype
+// directly from the constructor function
+// that created it.
+// Check the prototype
+let terrier = new Dog('Huba');
+console.log('Should be true >', Dog.prototype.isPrototypeOf(terrier));
+
+let prototypeProps = [];
+for (let prop in terrier) {
+  if (!terrier.hasOwnProperty(prop)) prototypeProps.push(prop);
+};
+console.log('Huba:', terrier);
+console.log('Prototype props of terrier:', prototypeProps);
+terrier.describe();
+
 
