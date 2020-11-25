@@ -32,4 +32,8 @@ console.log('Huba:', terrier);
 console.log('Prototype props of terrier:', prototypeProps);
 terrier.describe();
 
+// Prototype chain
+// Object is a supertype for all objects in JavaScript.
+console.log('True >', Object.prototype.isPrototypeOf(Dog.prototype));
+
 
