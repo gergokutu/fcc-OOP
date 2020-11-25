@@ -73,6 +73,9 @@ Animal.prototype = {
 // Instead >
 // let grizzly = Object.create(Animal.prototype);
 // let wildCat = Object.create(Animal.prototype);
+
+// When an object inherits its prototype from another object,
+// it also inherits the supertype's constructor property.
 Cat.prototype = Object.create(Animal.prototype);
 Bear.prototype = Object.create(Animal.prototype);
 
@@ -80,3 +83,9 @@ let grizzly = new Bear('Sushi');
 let wildCat = new Bear('Maci Laci');
 
 grizzly.eat();
+console.log('Bear constructor inherited from Animal >', grizzly.constructor);
+
+// Reset an Inherited Constructor Property
+Cat.prototype.constructor = Cat;
+Bear.prototype.constructor = Bear;
+console.log('Bear constructor after setting back >', grizzly.constructor);
