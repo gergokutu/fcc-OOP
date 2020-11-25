@@ -71,5 +71,12 @@ Animal.prototype = {
 // Not the best for inheritance
 // let grizzly = new Animal();
 // Instead >
-let grizzly = Object.create(Animal.prototype);
-let wildCat = Object.create(Animal.prototype);
+// let grizzly = Object.create(Animal.prototype);
+// let wildCat = Object.create(Animal.prototype);
+Cat.prototype = Object.create(Animal.prototype);
+Bear.prototype = Object.create(Animal.prototype);
+
+let grizzly = new Bear('Sushi');
+let wildCat = new Bear('Maci Laci');
+
+grizzly.eat();
