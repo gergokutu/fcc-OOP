@@ -18,3 +18,20 @@ let glideMixin = (obj) => {
 glideMixin(bird);
 glideMixin(boat);
 bird.glide();
+
+// Use ClOSURE to protect properties within an object from being modified externally
+// In JavaScript, a function always has access to the context in which it was created.
+// This is called closure.
+function Bird() {
+  // public variable
+  this.name = "Birdy";
+  // private variable
+  let weight = 15;
+  // publicly available method that a bird object can use
+  this.getWeight = function () {
+    return weight;
+  };
+};
+
+let strucc = new Bird();
+console.log(strucc.getWeight());
